@@ -1,8 +1,6 @@
 import 'dart:convert';
 import 'dart:developer';
 import 'package:dio/dio.dart';
-import 'package:http/http.dart' as http;
-
 import '../../../utils/constants/api_constant.dart';
 
 abstract class RegisterRepository{
@@ -28,16 +26,6 @@ abstract class RegisterRepository{
       log(e.message??"");
       return false;
     }
-    // http.Response response=await http.post(Uri.parse("https://easy-appointments-z8ge.onrender.com/api/user/register"),
-    // body: json.encode({
-    //   "name":"abhay",
-    //   "age":"15",
-    //   "password":"12345",
-    //   "phone" :"926497680",
-    //   "gender" :"male",
-    //   "email":"abhay@lll.com"
-    // })
-    // );
   }
 
 }
