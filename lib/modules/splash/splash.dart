@@ -1,8 +1,6 @@
 import 'package:easy_appointment/modules/splash/welcome.dart';
 import 'package:flutter/material.dart';
 
-import '../dashboard/screens/dashboard.dart';
-import '../login/screens/login.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -18,7 +16,7 @@ class _SplashScreenState extends State<SplashScreen> {
     // TODO: implement initState
     super.initState();
     Future.delayed(const Duration(seconds: 2),(){
-      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>WelcomeScreen()));
+      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>const WelcomeScreen()));
     });
   }
 

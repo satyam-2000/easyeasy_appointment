@@ -1,4 +1,4 @@
-import 'package:easy_appointment/modules/login/screens/login.dart';
+import 'package:easy_appointment/modules/patient/login/screens/login.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
