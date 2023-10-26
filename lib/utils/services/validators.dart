@@ -6,6 +6,18 @@ abstract class Validators{
     return null;
   }
 
+  static String? emailValidator(String? email) {
+    if (email == '') {
+      return "email is required";
+    }
+    if (!RegExp(r'^.+@[a-zA-Z]+\.{1}[a-zA-Z]+(\.{0,1}[a-zA-Z]+)$')
+        .hasMatch(email ?? '')) {
+      // log("Enter");
+      return "Enter valid Email";
+    }
+    return null;
+  }
+
   static String? passwordValidator(String? password) {
     if (password == '') {
       return "Password is required";

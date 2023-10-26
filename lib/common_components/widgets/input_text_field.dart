@@ -6,14 +6,15 @@ class InputTextField extends StatelessWidget {
   bool? isObscure;
   TextInputType? textInputType;
   final String? Function(String?)? validator;
-  InputTextField({Key? key,required this.controller,required this.label,this.isObscure,this.textInputType,this.validator,}) : super(key: key);
+  Color themeColor;
+  InputTextField({Key? key,required this.controller,required this.label,this.isObscure,this.textInputType,this.validator,required this.themeColor}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text("$label:",style: TextStyle(color: Colors.blue.shade800,fontSize: 15),),
+        Text("$label:",style: TextStyle(color: themeColor,fontSize: 15),),
         const SizedBox(height: 8,),
         TextFormField(
           validator: validator,
@@ -21,12 +22,11 @@ class InputTextField extends StatelessWidget {
           obscureText: isObscure??false,
           controller: controller,
           decoration: InputDecoration(
-            fillColor: Colors.blue.shade800,
-            focusColor: Colors.blue.shade800,
-            hintText: "Enter",
+            fillColor: themeColor,
+            focusColor: themeColor,
             enabledBorder: OutlineInputBorder(
               borderRadius: const BorderRadius.all(Radius.circular(10.0)),
-              borderSide: BorderSide(color: Colors.blue.shade800),
+              borderSide: BorderSide(color: themeColor),
             ),
             errorBorder: OutlineInputBorder(
               borderRadius: const BorderRadius.all(Radius.circular(10.0)),
@@ -38,7 +38,7 @@ class InputTextField extends StatelessWidget {
             ),
             focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.all(Radius.circular(10.0)),
-              borderSide: BorderSide(color: Colors.blue.shade800),
+              borderSide: BorderSide(color: themeColor),
             ),
           ),
         ),
