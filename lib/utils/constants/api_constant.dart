@@ -10,4 +10,6 @@ class ApiConstants
   //Doctors
   static String doctorRegister="$_baseUrl/doctor/register";
   static String doctorLogin="$_baseUrl/doctor/login";
+  static String doctor="$_baseUrl/doctor";
+  static String upload="$_baseUrl/doctor/upload";
 }

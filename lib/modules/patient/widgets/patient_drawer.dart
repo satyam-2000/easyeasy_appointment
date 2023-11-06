@@ -1,7 +1,7 @@
 import 'package:easy_appointment/modules/patient/login/models/login_model.dart';
 import 'package:flutter/material.dart';
-
-import '../../patient/login/screens/login.dart';
+import '../../../utils/constants/color_constants.dart';
+import '../../splash/welcome.dart';
 
 class PatientDrawer extends StatefulWidget {
   final LoginResponseModel patientDetails;
@@ -57,7 +57,7 @@ class _PatientDrawerState extends State<PatientDrawer> {
                 const SizedBox(height: 10,),
                 ListTile(
                   onTap: (){
-                    Navigator.pushAndRemoveUntil(context,MaterialPageRoute(builder: (context)=>const LoginScreen()), (route) => false);
+                    showPopup(context);
                   },
                   title: Row(
                   children: [
@@ -77,5 +77,41 @@ class _PatientDrawerState extends State<PatientDrawer> {
       ),
       ),
     );
+  }
+
+  void showPopup(BuildContext context) {
+      showDialog(context: context, builder: (context){
+        return Center(
+          child: Dialog(
+            child: Container(
+              width: 150,
+              height: 150,
+              child: Padding(
+                padding: const EdgeInsets.symmetric(vertical: 8.0,horizontal: 20),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Text("Are you sure?",style: TextStyle(fontSize: 18,fontWeight: FontWeight.w500),),
+                    const SizedBox(height: 20,),
+                    Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          ElevatedButton(onPressed: (){
+                            Navigator.pushAndRemoveUntil(context,MaterialPageRoute(builder: (context)=>const WelcomeScreen()), (route) => false);
+                          }, child: Text("Yes"),style: ElevatedButton.styleFrom(backgroundColor: AppColors.patientThemeColor),),
+                          ElevatedButton(onPressed: (){
+                            Navigator.pop(context);
+                          }, child: Text("No",),
+                              style: ElevatedButton.styleFrom(backgroundColor: AppColors.patientThemeColor
+                              ) ),
+                        ]
+                    )
+                  ],
+                ),
+              ),
+            ),
+          ),
+        );
+      });
   }
 }

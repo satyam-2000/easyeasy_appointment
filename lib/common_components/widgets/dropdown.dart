@@ -94,7 +94,6 @@ class _DropDownWidgetState extends State<DropDownWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(vertical: 0),
       child: GestureDetector(
         onLongPress: () {
           HapticFeedback.lightImpact();

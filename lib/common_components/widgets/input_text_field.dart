@@ -46,3 +46,46 @@ class InputTextField extends StatelessWidget {
     );
   }
 }
+
+
+class InputTextField2 extends StatelessWidget {
+  TextEditingController controller;
+  String hintText;
+  bool? isObscure;
+  TextInputType? textInputType;
+  final String? Function(String?)? validator;
+  InputTextField2({Key? key,required this.controller,this.isObscure,this.textInputType,this.validator,required this.hintText}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return TextFormField(
+      controller: controller,
+      obscureText:isObscure??false,
+      keyboardType: textInputType,
+      validator: validator,
+      decoration: InputDecoration(
+        fillColor: const Color(0xFFefefef),
+        filled: true,
+        hintText: hintText,
+        hintStyle: const TextStyle(),
+        enabledBorder: const OutlineInputBorder(
+          borderRadius: BorderRadius.all(Radius.circular(30.0)),
+          borderSide: BorderSide(color: Colors.white),
+        ),
+        errorBorder: OutlineInputBorder(
+          borderRadius: const BorderRadius.all(Radius.circular(30.0)),
+          borderSide: BorderSide(color: Colors.white),
+        ),
+        focusedErrorBorder: OutlineInputBorder(
+          borderRadius: const BorderRadius.all(Radius.circular(30.0)),
+          borderSide: BorderSide(color: Colors.white),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.all(Radius.circular(30.0)),
+          borderSide: BorderSide(color: Colors.white),
+        ),
+      ),
+    );
+  }
+}
+

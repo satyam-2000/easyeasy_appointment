@@ -5,6 +5,8 @@ class DoctorRegisterModel{
   String password;
   String qualification;
   String speciality;
+  String experience;
+  String? photo;
 
   DoctorRegisterModel({
     required this.name,
@@ -12,7 +14,9 @@ class DoctorRegisterModel{
     required this.password,
     required this.email,
     required this.qualification,
-    required this.speciality
+    required this.speciality,
+    required this.experience,
+    this.photo
   });
 
   Map<String,dynamic> toJson(){
@@ -22,7 +26,9 @@ class DoctorRegisterModel{
       "email":email,
       "password":password,
       "role":speciality,
-      "qualification":qualification
+      "qualification":qualification,
+      "experienced":experience,
+      "photo":photo
     };
   }
 }
